@@ -23,7 +23,9 @@ NSString *NSBundleFolder();
 
 + (NSArray *) filesInFolder: (NSString *) path;
 
-+ (UIImage *) imageNamed: (NSString *) aName;
-+ (UIImage *) imageFromURLString: (NSString *) urlstring;
+// The methods below are not implemented in upstream repository and UIImage class handles these cases.
+// So commenting out.
+//+ (UIImage *) imageNamed: (NSString *) aName;
+//+ (UIImage *) imageFromURLString: (NSString *) urlstring;
 @end
 
