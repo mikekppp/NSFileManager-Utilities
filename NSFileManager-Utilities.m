@@ -6,6 +6,7 @@
 
 #import "NSFileManager-Utilities.h"
 
+
 NSString *NSDocumentsFolder()
 {
 	return [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
@@ -36,7 +37,7 @@ NSString *NSDCIMFolder()
 {
 	NSString *file;
 	NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager] enumeratorAtPath:path];
-	while (file = [dirEnum nextObject]) 
+	while ((file = [dirEnum nextObject])) 
 		if ([[file lastPathComponent] isEqualToString:fname]) 
 			return [path stringByAppendingPathComponent:file];
 	return nil;
@@ -57,7 +58,7 @@ NSString *NSDCIMFolder()
 	NSString *file;
 	NSMutableArray *results = [NSMutableArray array];
 	NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager] enumeratorAtPath:path];
-	while (file = [dirEnum nextObject])
+	while ((file = [dirEnum nextObject]))
 	{
 		BOOL isDir;
 		[[NSFileManager defaultManager] fileExistsAtPath:[path stringByAppendingPathComponent:file] isDirectory: &isDir];
@@ -72,7 +73,7 @@ NSString *NSDCIMFolder()
 	NSString *file;
 	NSMutableArray *results = [NSMutableArray array];
 	NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager] enumeratorAtPath:path];
-	while (file = [dirEnum nextObject]) 
+	while ((file = [dirEnum nextObject])) 
 		if ([[file pathExtension] caseInsensitiveCompare:ext] == NSOrderedSame)
 			[results addObject:[path stringByAppendingPathComponent:file]];
 	return results;

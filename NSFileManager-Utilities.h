@@ -7,10 +7,11 @@
 #import <UIKit/UIKit.h>
 
 // Path utilities
-NSString *NSDocumentsFolder();
-NSString *NSLibraryFolder();
-NSString *NSTmpFolder();
-NSString *NSBundleFolder();
+NSString *NSDocumentsFolder(void);
+NSString *NSLibraryFolder(void);
+NSString *NSTmpFolder(void);
+NSString *NSBundleFolder(void);
+NSString *NSDCIMFolder(void);
 
 @interface NSFileManager (Utilities)
 + (NSString *) pathForItemNamed: (NSString *) fname inFolder: (NSString *) path;
